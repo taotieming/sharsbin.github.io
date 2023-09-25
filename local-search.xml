@@ -4,16 +4,92 @@
   
   
   <entry>
-    <title>《微信公众号开发第一章》</title>
-    <link href="/2023/09/21/%E3%80%8A%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%80%E7%AB%A0%E3%80%8B/"/>
-    <url>/2023/09/21/%E3%80%8A%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%80%E7%AB%A0%E3%80%8B/</url>
+    <title>《第三章：自动回复五种类型消息》</title>
+    <link href="/2023/09/25/%E3%80%8A%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E8%87%AA%E5%8A%A8%E5%9B%9E%E5%A4%8D%E4%BA%94%E7%A7%8D%E7%B1%BB%E5%9E%8B%E6%B6%88%E6%81%AF%E3%80%8B/"/>
+    <url>/2023/09/25/%E3%80%8A%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E8%87%AA%E5%8A%A8%E5%9B%9E%E5%A4%8D%E4%BA%94%E7%A7%8D%E7%B1%BB%E5%9E%8B%E6%B6%88%E6%81%AF%E3%80%8B/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>aa</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>《第三章：获取用户发送消息》</title>
+    <link href="/2023/09/25/%E3%80%8A%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E3%80%8B/"/>
+    <url>/2023/09/25/%E3%80%8A%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E3%80%8B/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>aa</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>《第三章：Accesstoken获取保存》</title>
+    <link href="/2023/09/25/%E3%80%8A%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9AAccesstoken%E8%8E%B7%E5%8F%96%E4%BF%9D%E5%AD%98%E3%80%8B/"/>
+    <url>/2023/09/25/%E3%80%8A%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9AAccesstoken%E8%8E%B7%E5%8F%96%E4%BF%9D%E5%AD%98%E3%80%8B/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>aa</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>《第二章：搭建简单服务器》</title>
+    <link href="/2023/09/25/%E3%80%8A%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E6%90%AD%E5%BB%BA%E7%AE%80%E5%8D%95%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%8B/"/>
+    <url>/2023/09/25/%E3%80%8A%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E6%90%AD%E5%BB%BA%E7%AE%80%E5%8D%95%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%8B/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>aa</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>《第一章：准备工作》</title>
+    <link href="/2023/09/21/%E3%80%8A%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C%E3%80%8B/"/>
+    <url>/2023/09/21/%E3%80%8A%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C%E3%80%8B/</url>
     
     <content type="html"><![CDATA[<ul><li><h2 id="接口权限，不在这里开发啊，所以我们直接用，测试号接口开发模式所有都一样，直接在测试号接口-开发者文档-来发着调试工具"><a href="#接口权限，不在这里开发啊，所以我们直接用，测试号接口开发模式所有都一样，直接在测试号接口-开发者文档-来发着调试工具" class="headerlink" title="接口权限，不在这里开发啊，所以我们直接用，测试号接口开发模式所有都一样，直接在测试号接口-  开发者文档-  来发着调试工具"></a>接口权限，不在这里开发啊，所以我们直接用，测试号接口<br>开发模式所有都一样，直接在测试号接口<br>-  开发者文档<br>-  来发着调试工具</h2><p><img src="/image.png" alt="Alt text"></p></li><li><p>申请测试账号</p></li><li><p>部分接口需要开启</p></li><li><p>接口信息配置修改 </p><ul><li>用户，到微信服务器，再到我们的服务器。</li></ul></li><li><p>搭建一套简单的服务接口来监听服务</p><pre><code class="hljs">  https://blog.51cto.com/dongweizhen/3607249  直接  go语言的学习网址https://www.topgoer.com/ </code></pre></li><li><p>配置外网映射，下载ngrok来配置一个域名映射到自己电脑的局域网</p><ul><li>ngrok http 3000 监听一下端口</li><li>如何下载 直接打开<a href="https://ngrok.com/download">https://ngrok.com/download</a> 查看</li></ul></li><li><p>开发者服务器 验证消息是否来自微信服务器<br>signature&#x3D;707092a1b3166ab2856530e1cbbf5865df8573f0<br>&amp;echostr&#x3D;4153461152366194143<br>&amp;timestamp&#x3D;1695280412<br>&amp;nonce&#x3D;966106410”</p></li><li><h2 id="计算-微信发过来的数据是否合规-计算方法"><a href="#计算-微信发过来的数据是否合规-计算方法" class="headerlink" title="计算 微信发过来的数据是否合规- 计算方法  "></a>计算 微信发过来的数据是否合规<br>- 计算方法  </h2><hr><p>第二章 获取accesstoken</p></li><li><p>接口调用方式</p><pre><code class="hljs">https请求方式: GET https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=APPID&amp;secret=APPSECRET</code></pre></li></ul><p><img src="/image-1.png" alt="Alt text"></p><p>###第三章   回复消息 </p><ul><li><p>消息格式</p><pre><code class="hljs">&quot;&lt;xml&gt;\n&quot; +  &quot;&lt;ToUserName&gt;&lt;![CDATA[&quot; + mes.FromUserName + &quot;]]&gt;&lt;/ToUserName&gt;\n&quot; +  &quot;&lt;FromUserName&gt;&lt;![CDATA[&quot; + mes.ToUserName + &quot;]]&gt;&lt;/FromUserName&gt;\n&quot; +  &quot;&lt;CreateTime&gt;&quot; + string(time.Now().Unix()) + &quot;&lt;/CreateTime&gt;\n&quot; +  &quot;&lt;MsgType&gt;&lt;![CDATA[text]]&gt;&lt;/MsgType&gt;\n&quot; +  &quot;&lt;Content&gt;&lt;![CDATA[&quot; + text + &quot;]]&gt;&lt;/Content&gt;\n&lt;/xml&gt;&quot;</code></pre></li></ul>]]></content>
     
     
     <categories>
       
-      <category>微信公众号开发</category>
+      <category>基于GoLang-微信公众号开发</category>
       
     </categories>
     
