@@ -4,31 +4,6 @@
   
   
   <entry>
-    <title>《第七章-实现微信公众号的网页开发》</title>
-    <link href="/2023/10/05/%E3%80%8A%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%AE%9E%E7%8E%B0%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E7%9A%84%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91%E3%80%8B/"/>
-    <url>/2023/10/05/%E3%80%8A%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%AE%9E%E7%8E%B0%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E7%9A%84%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91%E3%80%8B/</url>
-    
-    <content type="html"><![CDATA[<p>[TOC]</p><h2 id="获取ticket"><a href="#获取ticket" class="headerlink" title="获取ticket"></a>获取ticket</h2><h3 id="什么是ticket"><a href="#什么是ticket" class="headerlink" title="什么是ticket"></a>什么是ticket</h3><ul><li><p>在服务器端 设置路由</p></li><li><p>设置一个 html页面，然后返回此页面</p></li><li><p>微信提供我们的开发工具包，js-sdk<br><img src="/image-3.png" alt="Alt text"></p></li><li><p>第一步获取ticket</p></li><li><p>保存ticket</p></li><li><p>使用ticket，如果有，判断是否过期，没有过期直接返回，过期重新获取保存</p></li></ul><h2 id="验证JS-SDK"><a href="#验证JS-SDK" class="headerlink" title="验证JS-SDK"></a>验证JS-SDK</h2><ul><li>验证js-sdk使用的签名</li><li></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>基于GoLang-微信公众号开发</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>微信开发</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>《第三章：获取用户发送消息并回复》</title>
     <link href="/2023/09/25/%E3%80%8A%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E5%B9%B6%E5%9B%9E%E5%A4%8D%E3%80%8B/"/>
     <url>/2023/09/25/%E3%80%8A%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E5%B9%B6%E5%9B%9E%E5%A4%8D%E3%80%8B/</url>
@@ -45,32 +20,7 @@
     
     <tags>
       
-      <tag>aa</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>《第六章：实现自定义菜单》</title>
-    <link href="/2023/09/25/%E3%80%8A%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95%E3%80%8B/"/>
-    <url>/2023/09/25/%E3%80%8A%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95%E3%80%8B/</url>
-    
-    <content type="html"><![CDATA[<p>[TOC]</p><h1 id="实现自定义菜单"><a href="#实现自定义菜单" class="headerlink" title="实现自定义菜单"></a>实现自定义菜单</h1><h2 id="创建接口"><a href="#创建接口" class="headerlink" title="创建接口"></a>创建接口</h2><ul><li><p>自定义菜单最多包括3个一级菜单，每个一级菜单最多包含5个二级菜单。</p><br></li><li><p>一级菜单最多4个汉字，二级菜单最多8个汉字，多出来的部分将会以“…”代替。</p><br></li><li><p>创建自定义菜单后，菜单的刷新策略是，在用户进入公众号会话页或公众号profile页时，如果发现上一次拉取菜单的请求在5分钟以前，就会拉取一下菜单，如果菜单有更新，就会刷新客户端的菜单。测试时可以尝试取消关注公众账号后再次关注，则可以看到创建后的效果。​</p></li><li><p>&lt; <a href="https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN%3E">https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN&gt;</a></p></li><li><p>以下是goland代码</p></li></ul><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br> func CreatMenu() <span class="hljs-punctuation">&#123;</span><br>token<span class="hljs-punctuation">,</span> _ <span class="hljs-punctuation">:</span>= GetAccesstoken()<br>deleurl <span class="hljs-punctuation">:</span>= <span class="hljs-string">&quot;https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=&quot;</span> + token<br>response<span class="hljs-punctuation">,</span> err <span class="hljs-punctuation">:</span>= http.Get(deleurl)<br>if err == nil <span class="hljs-punctuation">&#123;</span><br>fmt.Println(<span class="hljs-string">&quot;菜单删除正确&quot;</span>)<br>fmt.Println(response)<br><span class="hljs-punctuation">&#125;</span> else <span class="hljs-punctuation">&#123;</span><br>fmt.Println(<span class="hljs-string">&quot;删除菜单错误&quot;</span>)<br>fmt.Println(response)<br><span class="hljs-punctuation">&#125;</span><br><span class="hljs-comment">//https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN</span><br><span class="hljs-comment">//读取jsonfile</span><br>content<span class="hljs-punctuation">,</span> err <span class="hljs-punctuation">:</span>= ioutil.ReadFile(<span class="hljs-string">&quot;./common/menu.json&quot;</span>)<br>if err != nil <span class="hljs-punctuation">&#123;</span><br>log.Fatal(<span class="hljs-string">&quot;Error when opening file: &quot;</span><span class="hljs-punctuation">,</span> err)<br><span class="hljs-punctuation">&#125;</span><br><span class="hljs-comment">//拼接路由</span><br>createurl <span class="hljs-punctuation">:</span>= <span class="hljs-string">&quot;https://api.weixin.qq.com/cgi-bin/menu/create?access_token=&quot;</span> + token<br><br>payload <span class="hljs-punctuation">:</span>= strings.NewReader(string(content))<br><br>req<span class="hljs-punctuation">,</span> _ <span class="hljs-punctuation">:</span>= http.NewRequest(<span class="hljs-string">&quot;POST&quot;</span><span class="hljs-punctuation">,</span> createurl<span class="hljs-punctuation">,</span> payload)<br><br>req.Header.Add(<span class="hljs-string">&quot;Content-Type&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;application/json&quot;</span>)<br><br>response<span class="hljs-punctuation">,</span> err = http.DefaultClient.Do(req)<br>if err == nil <span class="hljs-punctuation">&#123;</span><br>fmt.Printf(<span class="hljs-string">&quot;菜单设置正确&quot;</span>)<br>fmt.Println(response)<br><span class="hljs-punctuation">&#125;</span> else <span class="hljs-punctuation">&#123;</span><br>fmt.Printf(<span class="hljs-string">&quot;设置菜单错误&quot;</span>)<br><span class="hljs-punctuation">&#125;</span><br><br><span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure><h2 id="查询接口"><a href="#查询接口" class="headerlink" title="查询接口"></a>查询接口</h2><p>不是重点不做详述</p><h2 id="删除接口"><a href="#删除接口" class="headerlink" title="删除接口"></a>删除接口</h2><ul><li>此功能是因为，无法覆盖原先配置的接口，所以只能删除再创建，直接发送</li></ul><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs json">token<span class="hljs-punctuation">,</span> _ <span class="hljs-punctuation">:</span>= GetAccesstoken()<br>deleurl <span class="hljs-punctuation">:</span>= <span class="hljs-string">&quot;https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=&quot;</span> + token<br>response<span class="hljs-punctuation">,</span> err <span class="hljs-punctuation">:</span>= http.Get(deleurl)<br>if err == nil <span class="hljs-punctuation">&#123;</span><br>fmt.Println(<span class="hljs-string">&quot;菜单删除正确&quot;</span>)<br>fmt.Println(response)<br><span class="hljs-punctuation">&#125;</span> else <span class="hljs-punctuation">&#123;</span><br>fmt.Println(<span class="hljs-string">&quot;删除菜单错误&quot;</span>)<br>fmt.Println(response)<br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure><h2 id="事件推送"><a href="#事件推送" class="headerlink" title="事件推送"></a>事件推送</h2><h2 id="个性化菜单接口"><a href="#个性化菜单接口" class="headerlink" title="个性化菜单接口"></a>个性化菜单接口</h2><h2 id="获取自定义配置"><a href="#获取自定义配置" class="headerlink" title="获取自定义配置"></a>获取自定义配置</h2>]]></content>
-    
-    
-    <categories>
-      
-      <category>基于GoLang-微信公众号开发</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>微信开发</tag>
+      <tag>《微信公众号开发》</tag>
       
     </tags>
     
