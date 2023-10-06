@@ -16,15 +16,15 @@
   <meta name="author" content="Sharsbin(莎士笔亚)">
   <meta name="keywords" content="">
   
-    <meta name="description" content="消息格式  &quot;&lt;xml&gt;\n&quot; + &quot;&lt;ToUserName&gt;&lt;![CDATA[&quot; + mes.FromUserName + &quot;]]&gt;&lt;&#x2F;ToUserName&gt;\n&quot; + &quot;&lt;FromUserName&gt;&lt;![CDATA[&quot; + mes.ToUserNa">
+    <meta name="description" content="获取微信消息 消息格式在这里不在详述直接参考微信官方链接格式https:&#x2F;&#x2F;developers.weixin.qq.com&#x2F;doc&#x2F;offiaccount&#x2F;Message_Management&#x2F;Receiving_standard_messages.html  接受代码部分 123456789101112131415161718192021222324r.POST(&quot;&#x2F;&quot;,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《第三章：获取用户发送消息并回复》">
 <meta property="og:url" content="http://example.com/2023/09/25/%E3%80%8A%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E5%B9%B6%E5%9B%9E%E5%A4%8D%E3%80%8B/index.html">
 <meta property="og:site_name" content="sharsbin">
-<meta property="og:description" content="消息格式  &quot;&lt;xml&gt;\n&quot; + &quot;&lt;ToUserName&gt;&lt;![CDATA[&quot; + mes.FromUserName + &quot;]]&gt;&lt;&#x2F;ToUserName&gt;\n&quot; + &quot;&lt;FromUserName&gt;&lt;![CDATA[&quot; + mes.ToUserNa">
+<meta property="og:description" content="获取微信消息 消息格式在这里不在详述直接参考微信官方链接格式https:&#x2F;&#x2F;developers.weixin.qq.com&#x2F;doc&#x2F;offiaccount&#x2F;Message_Management&#x2F;Receiving_standard_messages.html  接受代码部分 123456789101112131415161718192021222324r.POST(&quot;&#x2F;&quot;,">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-09-25T03:15:22.000Z">
-<meta property="article:modified_time" content="2023-10-06T10:30:12.424Z">
+<meta property="article:modified_time" content="2023-10-06T10:43:40.795Z">
 <meta property="article:author" content="Sharsbin(莎士笔亚)">
 <meta property="article:tag" content="aa">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          484 字
+          1.9k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          5 分钟
+          16 分钟
         
       </span>
     
@@ -273,16 +273,16 @@
             
               <div class="markdown-body">
                 
-                <ul>
-<li>消息格式</li>
+                <h2 id="获取微信消息"><a href="#获取微信消息" class="headerlink" title="获取微信消息"></a>获取微信消息</h2><ul>
+<li><p>消息格式在这里不在详述<br>直接参考微信官方链接格式<br><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html">https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html</a></p>
+</li>
+<li><p>接受代码部分</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs stylus">r<span class="hljs-selector-class">.POST</span>(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-built_in">func</span>(c *gin.Context) &#123;<br><br>		signature := c<span class="hljs-selector-class">.DefaultQuery</span>(<span class="hljs-string">&quot;signature&quot;</span>, <span class="hljs-string">&quot;枯藤&quot;</span>)<br>		timestamp := c<span class="hljs-selector-class">.DefaultQuery</span>(<span class="hljs-string">&quot;timestamp&quot;</span>, <span class="hljs-string">&quot;枯藤&quot;</span>)<br>		nonce := c<span class="hljs-selector-class">.DefaultQuery</span>(<span class="hljs-string">&quot;nonce&quot;</span>, <span class="hljs-string">&quot;枯藤&quot;</span>)<br>		token := dic<span class="hljs-selector-attr">[<span class="hljs-string">&quot;token&quot;</span>]</span><br>		isSame := <span class="hljs-built_in">vallidateToken</span>(token, timestamp, nonce, signature)<br>		fmt<span class="hljs-selector-class">.Printf</span>(<span class="hljs-string">&quot;调用了post方法\n&quot;</span>)<br>		<span class="hljs-keyword">if</span> isSame &#123;<br>			<span class="hljs-selector-tag">body</span>, err := c<span class="hljs-selector-class">.GetRawData</span>() <span class="hljs-comment">// 读取 request body 的内容</span><br>			<span class="hljs-keyword">if</span> err != nil &#123;<br>				fmt<span class="hljs-selector-class">.Printf</span>(<span class="hljs-string">&quot;读取body数据失败&quot;</span>)<br>			&#125;<br>			c<span class="hljs-selector-class">.Request</span><span class="hljs-selector-class">.Body</span> = ioutil<span class="hljs-selector-class">.NopCloser</span>(bytes<span class="hljs-selector-class">.NewBuffer</span>(body))<br><br>			message := function<span class="hljs-selector-class">.AnlyTextMessage</span>(body)<br><br>			sendMeg := function<span class="hljs-selector-class">.SendMessageText</span>(message)<br><br>			c<span class="hljs-selector-class">.String</span>(http<span class="hljs-selector-class">.StatusOK</span>, sendMeg)<br>		&#125; <span class="hljs-keyword">else</span> &#123;<br>			c<span class="hljs-selector-class">.String</span>(http<span class="hljs-selector-class">.StatusOK</span>, <span class="hljs-string">&quot;error&quot;</span>)<br>		&#125;<br><br></code></pre></td></tr></table></figure></li>
 </ul>
-<pre><code class="hljs">&quot;&lt;xml&gt;\n&quot; +
-&quot;&lt;ToUserName&gt;&lt;![CDATA[&quot; + mes.FromUserName + &quot;]]&gt;&lt;/ToUserName&gt;\n&quot; +
-&quot;&lt;FromUserName&gt;&lt;![CDATA[&quot; + mes.ToUserName + &quot;]]&gt;&lt;/FromUserName&gt;\n&quot; +
-&quot;&lt;CreateTime&gt;&quot; + string(time.Now().Unix()) + &quot;&lt;/CreateTime&gt;\n&quot; +
-&quot;&lt;MsgType&gt;&lt;![CDATA[text]]&gt;&lt;/MsgType&gt;\n&quot; +
-&quot;&lt;Content&gt;&lt;![CDATA[&quot; + text + &quot;]]&gt;&lt;/Content&gt;\n&lt;/xml&gt;&quot;
-</code></pre>
+<h2 id="转换发过来的xml变成结构体"><a href="#转换发过来的xml变成结构体" class="headerlink" title="转换发过来的xml变成结构体"></a>转换发过来的xml变成结构体</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">AnlyTextMessage</span><span class="hljs-params">(datastring []<span class="hljs-type">byte</span>)</span></span> (mes *XML) &#123;<br>	<span class="hljs-built_in">println</span>(datastring)<br>	peo := <span class="hljs-built_in">new</span>(XML)<br>	err := xml.Unmarshal(datastring, peo)<br>	<span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>		fmt.Println(<span class="hljs-string">&quot;222:&quot;</span>, err)<br>	&#125;<br>	fmt.Println(<span class="hljs-string">&quot;发过来的内容是:\n&quot;</span>, peo.Content)<br>	<span class="hljs-keyword">return</span> peo<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="设置回复的内容，根据回复的类型和内容来判断"><a href="#设置回复的内容，根据回复的类型和内容来判断" class="headerlink" title="设置回复的内容，根据回复的类型和内容来判断"></a>设置回复的内容，根据回复的类型和内容来判断</h2><ul>
+<li>这里只列举了 文字内容部分其余部分 自行想象思考<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs xml">func setUpReplyMsg(mes *XML) (msgString string) &#123;<br><br>	preStr := &quot;&quot; +<br>		&quot;<span class="hljs-tag">&lt;<span class="hljs-name">xml</span>&gt;</span>\n&quot; +<br>		&quot;<span class="hljs-tag">&lt;<span class="hljs-name">ToUserName</span>&gt;</span>&lt;![CDATA[&quot; + mes.FromUserName + &quot;]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">ToUserName</span>&gt;</span>\n&quot; +<br>		&quot;<span class="hljs-tag">&lt;<span class="hljs-name">FromUserName</span>&gt;</span>&lt;![CDATA[&quot; + mes.ToUserName + &quot;]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">FromUserName</span>&gt;</span>\n&quot; +<br>		&quot;<span class="hljs-tag">&lt;<span class="hljs-name">CreateTime</span>&gt;</span>&quot; + string(time.Now().Unix()) + &quot;<span class="hljs-tag">&lt;/<span class="hljs-name">CreateTime</span>&gt;</span>\n&quot; +<br>		&quot;<span class="hljs-tag">&lt;<span class="hljs-name">MsgType</span>&gt;</span>&lt;![CDATA[text]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">MsgType</span>&gt;</span>\n&quot; +<br>		&quot;<span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>&lt;![CDATA[&quot;<br>	//text<br><br>	endString := &quot;]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">xml</span>&gt;</span>&quot;<br><br>	if mes.MsgType == &quot;text&quot; &#123;<br>		msgString = preStr + &quot;回复的内容文本&quot; + endString<br>	&#125;<br>	fmt.Printf(msgString)<br>	return msgString<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
 
                 
               </div>
